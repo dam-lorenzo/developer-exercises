@@ -1,5 +1,6 @@
 from Simple.simple import generar_lista, ordenar_lista
 from Matriz.matriz import generar_matriz
+from Clases.clases import Circulo
 
 if __name__ == '__main__':
     print(f'\n\t\t\t{"="*22}')
@@ -24,7 +25,35 @@ if __name__ == '__main__':
         elif op == '2':
             generar_matriz()
         elif op == '3':
-            print('WIP')
+            op2 = -1
+            rad = int(input('Ingrese el radio del circulo: '))
+            try:
+                circulo = Circulo(rad)
+            except Exception:
+                break
+            while op2 != '0':
+                print('Opciones')
+                print('\t1) Mostrar area del circulo')
+                print('\t2) Mostrar perimetro del circulo')
+                print('\t3) Dibujar el circulo')
+                print('\t4) Multiplicar el circulo')
+                print('\t0) Para volver al menu principal')
+                op2 = input('Elija una opcion: ')
+                if op2 == '1':
+                    area = circulo.area()
+                    print(f'El area es {area}\n')
+                elif op2 == '2':
+                    perimetro = circulo.perimetro()
+                    print(f'El perimetro es {perimetro}\n')
+                elif op2 == '3':
+                    circulo.dibujar_circulo()
+                elif op2 == '4':
+                    number = int(input('Ingrese el numero a multiplicar: '))
+                    circulo2 = circulo.multiplicar(number)
+                elif op2 == '0':
+                    pass
+                else:
+                    print('Opcion incorrecta\n')
         elif op == '0':
             print('Hasta luego\n')
         else:
