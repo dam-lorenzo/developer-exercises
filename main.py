@@ -1,5 +1,5 @@
 from Simple.simple import generar_lista, ordenar_lista
-from Matriz.matriz import generar_matriz
+from Matriz.matriz import buscar_secuencia
 from Clases.clases import Circulo
 
 if __name__ == '__main__':
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             print(f'Lista sin ordenar {ages}\n')
             print(f'Lista ordenada {ordered_ages}\n')
         elif op == '2':
-            generar_matriz()
+            buscar_secuencia()
         elif op == '3':
             op2 = -1
             rad = int(input('Ingrese el radio del circulo: '))
